@@ -1,0 +1,50 @@
+<!--*********************************************************************************************************
+FileName   : createWidgetRecordComponent.html
+Description : Html template to create a display component to create a widget record from UI.
+Author      : Neha Dave
+
+Version History :
+Author      Date         Description
+Neha Dave   03-07-2021   Initial draft of batch class.
+Neha Dave   03-07-2021   Added Code to display the form to create widget record.
+Neha Dave   04-07-2021   Added code to display a confirmation window for super users when they try to save a
+                         invalid value.
+*************************************************************************************************************-->
+<template>
+    <!--Display form to create a widget record. Value is a required field.-->
+    <lightning-card title="Add a New Widget">
+        <div class="slds-var-m-around_medium">
+            <lightning-input type="text" label="Value" required></lightning-input>
+        </div>
+        <div>
+            <lightning-button variant="brand" label="Save" class="slds-var-m-left_medium" onclick={validateWidget}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+
+    <!-- Display confirmation window when displayConfirmationModal is set to true from js controller, by default
+    displayConfirmationModal is set to false on component loading. -->
+    <template if:true={displayConfirmationModal}>
+        <div class="slds-box slds-theme_shade">
+            <div class="slds-modal slds-fade-in-open slds-backdrop">
+                <div class="slds-modal__container">
+                    <!--Header Section-->
+                    <div class="slds-modal__header" style="background-color: #ea1537;">
+                        <h2 style="color : white; font-size : 180%">Warning : Invalid Record!</h2>
+                    </div>
+                    <!---Body Section-->
+                    <div class="slds-modal__content slds-var-p-around_medium">
+                        <div>
+                            <p>The widget record you are trying to save is invalid. Do you still want to save the record?</p>
+                        </div>
+                    </div>
+                    <!--Footer Section-->
+                    <div class="slds-modal__footer">
+                        <lightning-button label="Cancel" onclick={closeModal}></lightning-button>
+                        <lightning-button variant="brand" label="Save" onclick={SaveRecord} class="slds-var-m-left_medium"></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

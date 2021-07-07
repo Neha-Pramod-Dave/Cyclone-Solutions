@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <logo>Cyclone_Solutions1</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
+    </brand>
+    <description>Applications for Cyclone Solutions</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Cyclone Solutions</label>
+    <navType>Standard</navType>
+    <tabs>Widget__c</tabs>
+    <tabs>Cyclone_Solutions</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Cyclone_Solutions_UtilityBar</utilityBar>
+</CustomApplication>
